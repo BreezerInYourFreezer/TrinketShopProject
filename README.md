@@ -20,3 +20,4 @@ The columns it will include are:
 The plan is to make a fully functional code to be easily run by this hypothetical store owner or myself or anyone, which explains itself and its own functions as it goes along in the form of printing text. It will have UML diagrams featuring the Item objects, the ItemStatus object which may be separated if need be to state the story behind why the item isn't allowed and what actions must be taken, and the StoreInventory object which will store them all and allow functions to be performed on them. NetBeans, VP, and possibly more tools will be used for this.
 
 
+End result was a little different than expected but something I am quite happy with, do check the Master branch to see the source code published and check the .vpp file or image for the class diagram. Check the doc for the final document too, of course.
