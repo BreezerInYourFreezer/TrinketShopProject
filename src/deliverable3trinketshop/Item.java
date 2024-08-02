@@ -2,7 +2,7 @@ package deliverable3trinketshop;
 
 
 import java.time.LocalDate;
-
+//Getters for the item as well as how they are composed are here. This is the class to be modified if you are to add new fields.
 public class Item {
     private int itemStatus;
     private String itemName;
@@ -22,7 +22,7 @@ public class Item {
         this.soldDate = soldDate;
         this.seller = seller;
     }
-
+//Getters down here.
     public int getItemStatus() {
         return itemStatus;
     }
