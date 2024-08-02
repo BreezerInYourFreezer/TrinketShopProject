@@ -13,7 +13,7 @@ public class StoreInventory {
         this.items = new ArrayList<>();
         initializeDefaultItems();
     }
-
+//Default items here, more can be added or removed.
     private void initializeDefaultItems() {
         items.add(new Item(1, "Monkey Skull", 1, 1000.00, 2000.00, LocalDate.of(2023, 5, 10), "Alice"));
         items.add(new Item(2, "Handgun", 5, 300.00, 600.00, LocalDate.of(2023, 5, 20), "Bob"));
@@ -22,7 +22,7 @@ public class StoreInventory {
         items.add(new Item(1, "Rare Painting", 3, 2000.00, 4000.00, LocalDate.of(2023, 5, 25), "Eve"));
         items.add(new Item(2, "Stolen Jewelry", 10, 1000.00, 2500.00, LocalDate.of(2023, 4, 10), "Frank"));
     }
-
+//Basic item functions, called upon by ItemService at times.
     public void addItem(Item item) {
         items.add(item);
     }

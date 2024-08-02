@@ -4,7 +4,7 @@ import deliverable3trinketshop.StoreInventory;
 import deliverable3trinketshop.Item;
 import java.time.LocalDate;
 import java.util.List;
-
+//This class is made to store the functions related to items, to be sure they are encapsulated in a specific class for that purpose rather than filling anywhere else up more. Check InventoryManager for where they are used.
 public class ItemService {
     private StoreInventory storeInventory;
 

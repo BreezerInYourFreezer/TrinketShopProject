@@ -17,7 +17,7 @@ public class InventoryManager {
         this.itemService = new ItemService(new StoreInventory());
         this.scanner = new Scanner(System.in);
     }
-
+//Options menu below.
     public void run() {
         while (true) {
             System.out.println("Choose an option:");
@@ -36,19 +36,20 @@ public class InventoryManager {
             List<Item> results = null;
 
             switch (choice) {
+                //Searching by item status.
                 case 1:
                     System.out.println(
                             "Enter Item Status (1 for Available For Sale, 2 for Stolen Goods, 3 for Illegal To Own):");
                     int status = getValidStatus();
                     results = itemService.searchByStatus(status);
                     break;
-
+                //Searching by item name.
                 case 2:
                     System.out.println("Enter Item Name:");
                     String name = scanner.nextLine().trim();
                     results = itemService.searchByName(name);
                     break;
-
+                //Searching by sold date.
                 case 3:
                     System.out.println("Enter Sold Date (YYYY-MM-DD):");
                     LocalDate date = getDateInput();
@@ -56,13 +57,13 @@ public class InventoryManager {
                         results = itemService.searchBySoldDate(date);
                     }
                     break;
-
+                //Searching by seller.
                 case 4:
                     System.out.println("Enter Seller Name:");
                     String seller = scanner.nextLine().trim();
                     results = itemService.searchBySeller(seller);
                     break;
-
+                //Adding a new item.
                 case 5:
                     System.out.println("Enter Item Details:");
                     try {
@@ -104,7 +105,7 @@ public class InventoryManager {
                         System.out.println("Invalid input. Please try again.");
                     }
                     break;
-
+                //Deleting an item.
                 case 6:
                     itemService.getAllItems().forEach(System.out::println);
                     System.out.println("Enter the name of the item to delete:");
@@ -115,7 +116,7 @@ public class InventoryManager {
                         System.out.println("Item not found.");
                     }
                     break;
-
+                //Editing an item: this code always repeats if you got the item name wrong, as is intended.
                 case 7:
                     itemService.getAllItems().forEach(System.out::println);
                     String modifyItemName;
@@ -176,11 +177,11 @@ public class InventoryManager {
                         System.out.println("Invalid input. Please try again.");
                     }
                     break;
-
+                //Print all items.
                 case 8:
                     ItemPrinter.printItems(itemService.getAllItems());
                     break;
-
+                //Exit the program without shutting it down.
                 case 9:
                     System.out.println("Exiting...");
                     return;
@@ -194,7 +195,7 @@ public class InventoryManager {
             }
         }
     }
-
+//Security/input safety precautions, to allow for error handling.
     private int getIntInput() {
         while (!scanner.hasNextInt()) {
             System.out.println("Invalid input. Please enter an integer.");
